@@ -21,8 +21,9 @@ var detectNetwork = function(cardNumber) {
     digitName = 'Visa'
   } else if(firstTwoDigits === '51' || firstTwoDigits === '52' ||firstTwoDigits === '53' || firstTwoDigits === '54' || firstTwoDigits === '55'){
     digitName = 'MasterCard'
-  } else if(firstFourDigits === '6011'){
+  } else if(firstFourDigits === '6011' && cardNumber.length === 16){
     digitName = 'Discover'
+    console.log(digitName)
   }
 
   // Test for length
@@ -34,10 +35,11 @@ var detectNetwork = function(cardNumber) {
     lengthName = 'Visa'
   } else if(cardNumber[0] === '4' && cardNumber.length === 16){
     lengthName = 'Visa'
-  } else if(cardNumber.length === 16){
-    lengthName = 'MasterCard'
   } else if(firstFourDigits === '6011' && cardNumber.length === 16){
     lengthName = 'Discover'
+    console.log(lengthName)
+  } else if(cardNumber.length === 16){
+    lengthName = 'MasterCard'
   }
 
   //test for equality

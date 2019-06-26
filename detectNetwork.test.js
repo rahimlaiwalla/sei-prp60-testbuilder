@@ -152,7 +152,7 @@ describe('Discover', function() {
     if(detectNetwork('6011345678901234') !== 'Discover'){
       throw new Error('Test failed')
     }
-  });
+ });
 //   it('has a prefix of 6011 and a length of 19', function() {
 //     assert(detectNetwork('6011345678901234856') === 'Discover');
 //   });
